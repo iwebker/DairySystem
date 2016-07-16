@@ -43,6 +43,14 @@ public class User {
 	public void setMood(String mood) {
 		this.mood = mood;
 	}
+	public User(String userName, String passWord) {
+		super();
+		this.userName = userName;
+		this.passWord = passWord;
+	}
+	public User() {
+		
+	}
 	
 	
 }
