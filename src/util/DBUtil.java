@@ -12,11 +12,15 @@ public class DBUtil {
 	public ResultSet rs;
 	public PreparedStatement ps;
 	public int i;
+	public static String URL="jdbc:mysql://127.0.0.1:3306/db_dairy";
+	public static String USER="root";
+	public static String PASS="xzp427926";
+	
 	
 	public void getConn(){
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			conn=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/db_dairy","root","xzp427926");
+			conn=DriverManager.getConnection(PropertyUtil.getValue("URL"),PropertyUtil.getValue("USER"),PropertyUtil.getValue("PASS"));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
