@@ -45,15 +45,31 @@
       }
 
 </style>
+<script type="text/javascript">
+	function verity(){
+		var userName=$("#userName").val();
+		var passWord=$("passWord").val();
+		if(userName==""||userName==null){
+			$("#error").text("用户名不能为空");
+			return false;
+		}
+		if(passWord==""||passWord==null){
+			$("#error").text("密码不能为空");
+			return false;
+		}
+		return true;
+	}
+
+</script>
 </head>
 <body>
 	<div class="container">
-      <form name="myForm" class="form-signin" action="login" method="post" >
+      <form name="myForm" class="form-signin" action="userLogin" method="post" onsubmit="return verity();">
         <h2 class="form-signin-heading">日记本</h2>
         <input id="userName" name="userName"  type="text" class="input-block-level" placeholder="用户名">
         <input id="password" name="password"   type="password" class="input-block-level" placeholder="密码" >
         <label class="checkbox">
-          <input id="remember" name="remember" type="checkbox" value="remember-me">记住我 &nbsp;&nbsp;&nbsp;&nbsp; <font id="error" color="red">${error }</font>  
+          <input id="remember" name="remember" type="checkbox" value="remember-me">记住我 &nbsp;&nbsp;&nbsp;&nbsp; <font id="error">${error }</font>  
         </label>
         <button class="btn btn-large btn-primary" type="submit">登录</button>
         &nbsp;&nbsp;&nbsp;&nbsp;
