@@ -59,7 +59,7 @@
         &nbsp;&nbsp;&nbsp;&nbsp;
         <button class="btn btn-large btn-primary" type="button" >重置</button>
 
-<p align="center" style="padding-top: 15px;">欢迎使用日记本系统 <a href="http://www.iwebker.com" target="_blank">http://www.iwebker.com</a></p>
+<p align="center" style="padding-top: 15px;">欢迎使用日记本系统<br/><a href="http://www.iwebker.com" target="_blank">http://www.iwebker.com</a></p>
       </form>
 </div>
 </body>
