@@ -40,7 +40,10 @@ public class UserLogin extends HttpServlet {
 		User curentUser=ud.login(loginUser);
 		if(curentUser==null){
 			//Login Failed(登录失败)
-			
+			request.setAttribute("name", userName);
+			request.setAttribute("pass", passWord);
+			request.setAttribute("error","用户名或密码错误");
+			request.getRequestDispatcher("/index.jsp").forward(request, response);
 		}else{
 			//Login Success(登录成功)
 			session.setAttribute("curentUser", curentUser);

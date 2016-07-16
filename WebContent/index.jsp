@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>日记本登录界面</title>
 <link href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
@@ -48,7 +49,7 @@
 <script type="text/javascript">
 	function verity(){
 		var userName=$("#userName").val();
-		var passWord=$("passWord").val();
+		var passWord=$("#passWord").val();
 		if(userName==""||userName==null){
 			$("#error").text("用户名不能为空");
 			return false;
@@ -64,12 +65,12 @@
 </head>
 <body>
 	<div class="container">
-      <form name="myForm" class="form-signin" action="userLogin" method="post" onsubmit="return verity();">
+      <form name="myForm" class="form-signin" action="UserLogin" method="post" onsubmit="return verity();">
         <h2 class="form-signin-heading">日记本</h2>
-        <input id="userName" name="userName"  type="text" class="input-block-level" placeholder="用户名">
-        <input id="password" name="password"   type="password" class="input-block-level" placeholder="密码" >
+        <input id="userName" name="userName"  type="text" class="input-block-level" placeholder="用户名" value="${name}">
+        <input id="passWord" name="passWord"   type="password" class="input-block-level" placeholder="密码" value="${pass}">
         <label class="checkbox">
-          <input id="remember" name="remember" type="checkbox" value="remember-me">记住我 &nbsp;&nbsp;&nbsp;&nbsp; <font id="error">${error }</font>  
+          <input id="remember" name="remember" type="checkbox" value="remember-me">记住我 &nbsp;&nbsp;&nbsp;&nbsp; <font id="error">${error}</font>  
         </label>
         <button class="btn btn-large btn-primary" type="submit">登录</button>
         &nbsp;&nbsp;&nbsp;&nbsp;
