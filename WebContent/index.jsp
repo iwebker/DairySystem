@@ -48,7 +48,7 @@
 <script type="text/javascript">
 	function verity(){
 		var userName=$("#userName").val();
-		var passWord=$("passWord").val();
+		var passWord=$("#passWord").val();
 		if(userName==""||userName==null){
 			$("#error").text("用户名不能为空");
 			return false;
@@ -64,10 +64,9 @@
 </head>
 <body>
 	<div class="container">
-      <form name="myForm" class="form-signin" action="userLogin" method="post" onsubmit="return verity();">
+      <form name="myForm" class="form-signin" action="UserLogin" method="post" onsubmit="return verity();">
         <h2 class="form-signin-heading">日记本</h2>
-        <input id="userName" name="userName"  type="text" class="input-block-level" placeholder="用户名">
-        <input id="password" name="password"   type="password" class="input-block-level" placeholder="密码" >
+        <input id="passWord" name="passWord"   type="password" class="input-block-level" placeholder="密码" >
         <label class="checkbox">
           <input id="remember" name="remember" type="checkbox" value="remember-me">记住我 &nbsp;&nbsp;&nbsp;&nbsp; <font id="error">${error }</font>  
         </label>
