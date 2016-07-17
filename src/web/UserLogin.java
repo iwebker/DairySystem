@@ -3,6 +3,7 @@ package web;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -32,6 +33,9 @@ public class UserLogin extends HttpServlet {
 		// TODO Auto-generated method stub
 		String userName=request.getParameter("userName");
 		String passWord=request.getParameter("passWord");
+		String remember=request.getParameter("remember");
+		
+		
 		
 		HttpSession session=request.getSession();
 		
@@ -45,6 +49,13 @@ public class UserLogin extends HttpServlet {
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}else{
 			//Login Success(登录成功)
+			//1.写入Cookie
+			if("remember-me".equals(remember)){
+				Cookie cookie=new Cookie("Dairy",userName);
+				cookie.setMaxAge(60*60*60*24*7);
+				response.addCookie(cookie);	
+			}
+			//2.存入session中 
 			session.setAttribute("curentUser", curentUser);
 			response.sendRedirect("main.jsp");
 		}

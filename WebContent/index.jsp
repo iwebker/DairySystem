@@ -1,5 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	//如果用户登录信息不对，则不进行读取Cookie
+	//用户直接访问登录界面
+	if(request.getAttribute("curentUser")==null){
+		String userName=null;
+		String passWord=null;
+		
+		Cookie[] cookies=request.getCookies();
+		for(int i=0;cookies!=null && i<cookies.length;i++){
+			if(cookies[i].getName().equals("Dairy")){
+				userName=cookies[i].getValue();
+			}		
+		}
+		
+		if(userName==null){
+			userName="";
+		}
+		
+		if(passWord==null){
+			passWord="";
+		}
+		
+		pageContext.setAttribute("name",userName);
+	}
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
