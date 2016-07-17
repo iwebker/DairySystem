@@ -4,11 +4,38 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>日记本主界面</title>
 <link href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 <script src="${pageContext.request.contextPath}/bootstrap/js/jquery-1.12.3.min.js"></script>
 <script src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.js"></script>
+<style type="text/css">
+	  body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      
+      .data_list{
+	border: 1px solid #E5E5E5;
+	padding: 10px;
+	background-color: #FDFDFD;
+	margin-top: 15px;
+}
+
+.data_list .data_list_title{
+	font-size: 15px;
+	font-weight: bold;
+	border-bottom: 1px solid #E5E5E5;
+	padding-bottom: 10px;
+	padding-top: 5px;
+}
+
+.data_list .data_list_title img{
+	vertical-align: top;
+}
+</style>
+
 </head>
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top">
@@ -27,10 +54,46 @@
           <form name="myForm" class="navbar-form pull-right" method="post" action="">
 	 		 <input class="span2" id="s_title" name="s_title"  type="text" placeholder="往事如烟...">
 	  		 <button type="submit" class="btn" onkeydown="if(event.keyCode==13) myForm.submit()"><i class="icon-search"></i>&nbsp;搜索日志</button>
-		</form>
+		  </form>
           
         </div>
       </div>
 </div>
+
+<div class="container">
+  <div class="row-fluid">
+    <div class="span9">
+      <div class="data_list">
+      	<div class="data_list_title">
+      		<img alt="" src="${pageContext.request.contextPath}/images/list_icon.png">
+      		日志列表
+      	</div>
+      </div>
+    </div>
+    <div class="span3">
+      <div class="data_list">
+      	<div class="data_list_title">
+      		<img alt="" src="${pageContext.request.contextPath}/images/user_icon.png">
+      		个人中心
+      	</div>
+      </div>
+      
+      <div class="data_list">
+      	<div class="data_list_title">
+      		<img alt="" src="${pageContext.request.contextPath}/images/byType_icon.png">
+      		日志类型
+      	</div>
+      </div>
+      
+      <div class="data_list">
+      	<div class="data_list_title">
+      		<img alt="" src="${pageContext.request.contextPath}/images/byDate_icon.png">
+      		日志时间
+      	</div>
+      </div>
+    </div>
+  </div>
+</div>  
+
 </body>
 </html>
