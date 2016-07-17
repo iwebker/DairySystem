@@ -66,6 +66,7 @@
 	<div class="container">
       <form name="myForm" class="form-signin" action="UserLogin" method="post" onsubmit="return verity();">
         <h2 class="form-signin-heading">日记本</h2>
+        <input id="userName" name="userName" type="text" class="input-block-level" placeholder="用户名" value="${name}" >
         <input id="passWord" name="passWord"   type="password" class="input-block-level" placeholder="密码" >
         <label class="checkbox">
           <input id="remember" name="remember" type="checkbox" value="remember-me">记住我 &nbsp;&nbsp;&nbsp;&nbsp; <font id="error">${error }</font>  
