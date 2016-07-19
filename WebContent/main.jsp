@@ -63,12 +63,10 @@
 <div class="container">
   <div class="row-fluid">
     <div class="span9">
-      <div class="data_list">
-      	<div class="data_list_title">
-      		<img alt="" src="${pageContext.request.contextPath}/images/list_icon.png">
-      		日志列表
-      	</div>
-      </div>
+      
+      
+      <jsp:include page="${dairyPage}"></jsp:include>
+      
     </div>
     <div class="span3">
       <div class="data_list">

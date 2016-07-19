@@ -19,4 +19,14 @@
     <servlet-name>UserLogin</servlet-name>
     <url-pattern>/UserLogin</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DairyFile</display-name>
+    <servlet-name>DairyFile</servlet-name>
+    <servlet-class>web.DairyFile</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DairyFile</servlet-name>
+    <url-pattern>/DairyFile</url-pattern>
+  </servlet-mapping>
 </web-app>
