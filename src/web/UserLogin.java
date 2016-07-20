@@ -57,7 +57,7 @@ public class UserLogin extends HttpServlet {
 			}
 			//2.存入session中 
 			session.setAttribute("curentUser", curentUser);
-			response.sendRedirect("main.jsp");
+			request.getRequestDispatcher("DairyFile").forward(request, response);			
 		}
 	}
 
